@@ -12,6 +12,7 @@ public class game_over_shiled : MonoBehaviour
     {
         if (mov.is_game_end)
         {
+            img.rectTransform.localScale = new Vector3(Screen.width, Screen.height, 0);
             if (a < 1f)
             {
                 a += 0.001f;
