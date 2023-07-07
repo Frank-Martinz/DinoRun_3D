@@ -7,6 +7,7 @@ TagManager:
   - ground
   - enemy
   - dont_spawn
+  - graphic_setting
   layers:
   - Default
   - TransparentFX
