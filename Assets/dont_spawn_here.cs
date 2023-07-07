@@ -16,25 +16,25 @@ public class dont_spawn_here : MonoBehaviour
     {
         if (col.gameObject.tag == "enemy")
         {
-            obs_scr.can_move = false;
+            col.GetComponent<obstacle_script>().can_move = false;
         }   
     }
     void OnTriggerStay(Collider col) 
     {
         if (col.gameObject.tag == "enemy")
         {
-            obs_scr.can_move = false;
+            col.GetComponent<obstacle_script>().can_move = false;
         }  
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (!mov.is_game_end)
         {
-            obs_scr.speed_coef += 0.00001f;
+            obs_scr.speed_coef += 0.00005f;
+            transform.localScale = new Vector3(transform.localScale.x + 0.001f, 1, 1);
             transform.position = obs_scr.transform.position;
-            transform.position = new Vector3(transform.position.x + 2.5f, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + (transform.localScale.x * 0.5f) + 0.5f, transform.position.y, transform.position.z);
         }
     }
 }

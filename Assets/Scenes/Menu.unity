@@ -1816,7 +1816,7 @@ MonoBehaviour:
       m_Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
     - m_Text: "1366\xD7768"
       m_Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-    - m_Text: "2560 \xD7 1440"
+    - m_Text: "2560\xD71440"
       m_Image: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
   m_OnValueChanged:
     m_PersistentCalls:

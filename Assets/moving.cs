@@ -28,7 +28,6 @@ public class moving : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!is_game_end)
