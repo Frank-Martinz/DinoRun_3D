@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,18 +22,8 @@ public class for_settings : MonoBehaviour
         if (display_mode.value == 0) {full_screen = true;}
         else {full_screen = false;}
 
-        if (resolution.value == 0)
-        {
-            Screen.SetResolution(1920, 1080, full_screen);
-        }
-        else if (resolution.value == 1)
-        {
-            Screen.SetResolution(1366, 768, full_screen);
-        }
-        else if (resolution.value == 2)
-        {
-            Screen.SetResolution(2560, 1440, full_screen);
-        }
+        string[] res = resolution.options[resolution.value].text.Split("×");
+        Screen.SetResolution(Convert.ToInt32(res[0]), Convert.ToInt32(res[1]), full_screen);
         apply.gameObject.SetActive(false);
     }
     

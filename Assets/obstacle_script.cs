@@ -30,15 +30,15 @@ public class obstacle_script : MonoBehaviour
     {
         if (!mov.is_game_end)
         {
-            speed_coef += 0.0001f;
+            speed_coef += 0.0003f;
             if (can_move)
             {
                 pre_score = -3 * speed_coef * Time.deltaTime * -1;
                 transform.position = transform.position + new Vector3(-3 * speed_coef, 0, 0) * Time.deltaTime;
                 if (pre_score > 0) {score += pre_score;}
-                if (transform.position.x < -10)
+                if (transform.position.x < -7)
                 {
-                    transform.position = new Vector3(GetRandomNumber(), 2.5f, transform.position.z);
+                    transform.position = new Vector3(GetRandomNumber(), 1.5f, transform.position.z);
                 }
             }
         }
@@ -47,6 +47,6 @@ public class obstacle_script : MonoBehaviour
 
     public int GetRandomNumber()
     {
-        return rnd.Next(13, 30);
+        return rnd.Next(15, Convert.ToInt32(50 + (speed_coef * 20)));
     }
 }
