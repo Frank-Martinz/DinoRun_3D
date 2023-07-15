@@ -9,6 +9,7 @@ public class moving : MonoBehaviour
     Rigidbody player;
     private bool is_ground = false;
     public bool is_game_end = false;
+    public bool is_game_paused = false;
     public obstacle_script obs_scr;
 
     // Start is called before the first frame update
@@ -30,7 +31,7 @@ public class moving : MonoBehaviour
 
     void Update()
     {
-        if (!is_game_end)
+        if (!is_game_end && !is_game_paused)
         {
             if(Input.GetKeyDown(KeyCode.Space) && is_ground) 
             {
@@ -38,12 +39,13 @@ public class moving : MonoBehaviour
                 player.AddForce(Vector3.up * 7, ForceMode.Impulse); 
             }
         }
-        else 
-        {
-            if(Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-        }
+        
+    }
+    public void set_unset_pause()
+    {
+        if (is_game_paused is false) {is_game_paused = true;}
+        else {is_game_paused = false;}
+        if (is_game_paused){Time.timeScale = 0; }
+        else {Time.timeScale = 1;}
     }
 }

@@ -28,7 +28,7 @@ public class obstacle_script : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (!mov.is_game_end)
+        if (!mov.is_game_end && !mov.is_game_paused)
         {
             speed_coef += 0.0003f;
             if (can_move)

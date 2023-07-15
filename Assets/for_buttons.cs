@@ -8,6 +8,7 @@ public class for_buttons : MonoBehaviour
 {
     public Canvas settings;
     public Canvas menu;
+    public canvas_esc_menu can_esc_men;
     public void Restart_game()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -28,5 +29,9 @@ public class for_buttons : MonoBehaviour
     {
         settings.gameObject.SetActive(true);
         menu.gameObject.SetActive(false);
+    }
+    public void Resume_game()
+    {
+        can_esc_men.Pause_or_resume();
     }
 }
